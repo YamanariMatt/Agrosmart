@@ -6,12 +6,18 @@ body{
   text-align: left;
   padding: auto;
   flex-direction: column;
-  background-color: white;
+  background-image: url(/image/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 
 
 header{
   background-color: #28EB6A;
+  background: radial-gradient(circle,#28EB6A,#B5D206);
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   border: #000000;
@@ -20,8 +26,12 @@ header{
   margin: auto;
   width:auto;
   height: 50px;
+}
+
+.header {
   
 }
+
 
 p {
   text-align: center;
@@ -63,8 +73,46 @@ img {
 
 footer{
   margin: auto;
-  background-color: #28EB6A;
+  background: radial-gradient(circle,#28EB6A,#B5D206);
   width: auto;
   left: auto;
   height: 200px;
+}
+
+.container {
+  background-position: center;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button-container button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
 }
