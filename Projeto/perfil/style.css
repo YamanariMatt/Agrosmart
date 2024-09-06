@@ -1,0 +1,54 @@
+body{
+    background-image: url(/Projeto/image/background.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+}
+main{
+    
+    background-color: gray;
+    box-shadow: 0px 4px 8px -2px;
+    width:500px;
+    height: 250px ;
+    margin: auto;
+
+}
+main h2{
+    background-color: rgb(128, 128, 128);
+    color: black;
+    padding-top: 20px;
+}
+main p{
+    text-decoration:underline;
+    padding-top: 15px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    filter: blur(2px);
+    z-index: -1;
+    backdrop-filter: blur(10px); 
+}
+
+a {
+    background-color: rgb(128, 128, 128);
+    color: black;
+    padding-top: 10px;
+    border-radius: 15px;
+}
