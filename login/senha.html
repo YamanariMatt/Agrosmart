@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redefinir Senha </title>
+    <title>Redefinir Senha</title>
     <link rel="shortcut icon" href="/image/Favicon.png" type="image/x-icon">
 
-    <!--CSS-->
     <link rel="stylesheet" href="style.css">
     
+    <script>
+        function enviarCodigo() {
+            var email = document.getElementById('email').value;
+            var cmail = document.getElementById('cmail').value;
 
-    <!--JS & jQuery-->
-    <script type="text/javascript" src="jscript.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            if (email === "" || cmail === "") {
+                alert("Por favor, preencha todos os campos.");
+            } else if (email !== cmail) {
+                alert("Os e-mails não coincidem. Tente novamente.");
+            } else {
+                alert("Código enviado para " + email + ". Verifique sua caixa de entrada!");
+            }
+        }
+    </script>
 </head>
 <body>
     <div id="container">
@@ -26,14 +35,14 @@
         </div>
 
         <div class="box-login">
-            <h1>Olá não se preocupe,<br>Para redefinir sua senha nós informe:</h1>
+            <h1>Olá, não se preocupe,<br>Para redefinir sua senha, informe:</h1>
 
             <div class="box-account">
-                <h2>informe seus dados</h2>
+                <h2>Informe seus dados</h2>
                 
-                <input type="email" name="email" id="email" placeholder="e-mail">
-                <input type="email" name="cmail" id="cmail" placeholder="confirmar o e-mail">
-                <button>Enviar codigo</button>
+                <input type="email" name="email" id="email" placeholder="e-mail" required>
+                <input type="email" name="cmail" id="cmail" placeholder="confirmar o e-mail" required>
+                <button onclick="enviarCodigo()">Enviar código</button>
             </div>
         </div>
     </div>
@@ -43,3 +52,5 @@
             <img src="user.png" alt="icone-usuário" title="fazer-login">
         </div>
     </a>
+</body>
+</html>

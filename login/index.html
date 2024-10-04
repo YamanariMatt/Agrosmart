@@ -1,55 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="shortcut icon" href="/image/Favicon.png" type="image/x-icon">
-    
-
     <link rel="stylesheet" href="style.css">
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
-    
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            // Verifica se os campos estão preenchidos
+            if (username === "" || password === "") {
+                alert("Por favor, preencha todos os campos.");
+            } else {
+                // Redireciona para a página inicial
+                window.location.href = "/inicial/inicio.html"; // Altere o caminho se necessário
+            }
+        }
+
+        // Adiciona o evento ao botão de login
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loginBtn').addEventListener('click', login);
+        });
+    </script>
 </head>
 <body>
-    
     <div id="container">
-        
         <div class="banner">
             <picture>
-                <source media="(max-width:750px )" srcset="image/logo agrosmart rd1.png" type="image/">
-                <source media="(max-width:1050px )" srcset="image/logo agrosmart rd2.png" type="image/">
-                <img src="/image/logo agrosmart rd1.png" alt="imagem flexivel">
+                <source media="(max-width:750px)" srcset="image/logo agrosmart rd1.png" type="image/">
+                <source media="(max-width:1050px)" srcset="image/logo agrosmart rd2.png" type="image/">
+                <img src="/image/logo agrosmart rd1.png" alt="imagem flexível">
             </picture>
             <p style="color: #fff; font-weight: 400;">
-                Seja bem vindo, acesse e aproveite todo o conteúdo,
+                Seja bem-vindo, acesse e aproveite todo o conteúdo,
                 <br>somos uma equipe de profissionais empenhados em
-                <br>trazer o melhor conteúdo direcionado a você, usuário. 
+                <br>trazer o melhor conteúdo direcionado a você, usuário.
             </p>
         </div>
 
         <div class="box-login">
-            <h1>
-                Olá!<br>
-                Seja bem vindo de volta.
-            </h1>
+            <h1>Olá!<br> Seja bem-vindo de volta.</h1>
 
             <div class="box">
-                <h2>faça o seu login agora</h2>
+                <h2>Faça o seu login agora</h2>
                 <input type="text" name="username" id="username" placeholder="Apelido">
                 <input type="password" name="password" id="password" placeholder="Senha">
-                
+
                 <a href="/login/senha.html">
                     <p>Esqueceu a sua senha?</p>
                 </a>
 
-                <button>
-                    <a href="/inicial/INICIO.HTML">Login</a>
-                </button>
-                
+                <button id="loginBtn">Login</button>
+
                 <a href="/login/conta.html">
                     <p>Criar uma conta</p>
                 </a>
@@ -57,8 +63,6 @@
                 <a href="/login/adm.html">
                     <p>Acessar como ADMINISTRADOR</p>
                 </a>
-                
-                
             </div>
         </div>
     </div>
