@@ -157,7 +157,7 @@ button {
 }
 
 h2 {
-  
+  color: var(--amarelinho);
   text-align: center;
   font-size: 2rem;
   margin-left: 1rem;
@@ -165,30 +165,6 @@ h2 {
   /* margin: auto; */
 }
 
-.azul {
-  color: var(--amarelinho);
-}
-
-.amarelo {
-  color: var(--amarelinho);
-}
-
-.verde {
-  color: var(--amarelinho);
-}
-
-/* Cores ao passar o mouse */
-.azul:hover {
-  color: rgb(65, 65, 248);
-}
-
-.amarelo:hover {
-  color: yellow;
-}
-
-.verde:hover {
-  color: rgb(2, 167, 2);
-}
 
 h1 {
   text-align: left;
