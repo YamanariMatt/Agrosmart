@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfil</title>
+    <link rel="shortcut icon" href="/Agrosmart/image/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../index.css">
+    <style>
+        /* Estilo padrão e modo escuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h2>Dados do Usuário</h2>
+        <p><strong>Nome:</strong> João Silva</p>
+        <p><strong>Email:</strong> joao.silva@email.com</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+        <button><a href="../inicio.html">Voltar</a></button>
+    </main>
+
+    <script>
+        function loadPreferences() {
+                // Modo escuro
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        
+                // Tamanho da fonte
+            const savedFontSize = localStorage.getItem('fontSize');
+            if (savedFontSize) {
+            document.body.style.fontSize = savedFontSize + 'px';
+            }
+            }
+        
+            loadPreferences();
+        </script>
+</body>
+</html>

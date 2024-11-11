@@ -5,41 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir Senha</title>
-    <link rel="shortcut icon" href="/image/Favicon.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="/Agrosmart/image/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    
-    <script>
-        function enviarCodigo() {
-            var email = document.getElementById('email').value;
-            var cmail = document.getElementById('cmail').value;
-
-            if (email === "" || cmail === "") {
-                alert("Por favor, preencha todos os campos.");
-            } else if (email !== cmail) {
-                alert("Os e-mails não coincidem. Tente novamente.");
-            } else {
-                alert("Código enviado para " + email + ". Verifique sua caixa de entrada!");
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Link para SweetAlert2 -->
+    <script src="senha.js" defer></script>
 </head>
 <body>
     <div id="container">
         <div class="banner">
-            <img src="/image/logo agrosmart rd1.png" alt="imagem-login">
+            <img src="/Agrosmart/image/logo agrosmart rd1.png" alt="imagem flexível" style="margin-left: 13.5px;">
             <p style="color: #fff;">
                 Esqueceu sua senha? Não se preocupe! 
-                <br>Siga os passos abaixo para recuperar o acesso à sua conta.
+                <br>Siga os passos ao lado para recuperar o acesso à sua conta.
             </p>
         </div>
 
         <div class="box-login">
-            <h1>Olá, não se preocupe,<br>Para redefinir sua senha, informe:</h1>
+            <h1>Para redefinir sua senha, informe:</h1>
 
             <div class="box-account">
                 <h2>Informe seus dados</h2>
-                
                 <input type="email" name="email" id="email" placeholder="e-mail" required>
                 <input type="email" name="cmail" id="cmail" placeholder="confirmar o e-mail" required>
                 <button onclick="enviarCodigo()">Enviar código</button>

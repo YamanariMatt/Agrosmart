@@ -5,14 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADM</title>
-    <link rel="shortcut icon" href="/image/Favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Agrosmart/image/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+    <script src="adm.js" defer></script> <!-- Link para o arquivo JS -->
+    <style>
+        /* Estilos para o ícone de olho */
+        .password-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div id="container">
         <div class="banner">
-            <img src="/image/logo agrosmart rd1.png" alt="imagem-login">
+            <img src="/Agrosmart/image/logo agrosmart rd1.png" alt="imagem flexível" style="margin-left: 13.5px;">
             <p style="color: #fff;">
                 Seja bem-vindo, acesse e aproveite todo o conteúdo,
                 <br>somos uma equipe de profissionais empenhados em
@@ -25,33 +41,16 @@
 
             <div class="box-account">
                 <h2>Informe seus dados</h2>
-                <input type="text" name="username" id="username" placeholder="Apelido">
                 <input type="email" name="email" id="email" placeholder="E-mail">
-                <input type="password" name="password" id="password" placeholder="Senha">
-    
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Senha">
+                    <div class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+                        <img src="/Agrosmart/image/eye-icon.png" alt="Mostrar Senha">
+                    </div>
+                </div>
                 <button id="acessarBtn" type="button">Acessar</button>
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            
-            $('#acessarBtn').click(function(event) {
-                var username = $('#username').val();
-                var email = $('#email').val();
-                var password = $('#password').val();
-
-                if (!username || !email || !password) {
-                    alert('Por favor, preencha todos os campos: apelido, e-mail e senha.');
-                    event.preventDefault(); 
-                } else {
-                    
-                window.location.href = '/inicial/inicio.html';
-                
-                }
-            });
-        });
-    </script>
 </body>
 </html>

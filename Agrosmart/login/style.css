@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+p {
+    cursor: pointer;
+    font-weight: 600;
+    color: #26874e;
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #26874e;
+    padding: 0px 0px 35px 15px;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #26874e;
+}
+
+input {
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid silver;
+    outline: none;
+    font-weight: 600;
+    color: #1c1c1c;
+    padding-right: 40px; /* Espaço para o ícone de olho à direita */
+}
+
+button {
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: #26874e;
+    color: #fff; /* Cor do texto do botão */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/Agrosmart/image/FOLHAGEM.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Mudança para cover para melhor ajuste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita rolagem */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    filter: blur(2px);
+    z-index: -1;
+    backdrop-filter: blur(10px);
+}
+
+#container {
+    width: 320px;
+    height: 520px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px -1px #000000;
+    background: #0000;
+    display: flex;
+    align-items: center;
+}
+
+#container .banner {
+    width: 520px;
+    height: 520px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: linear-gradient(#26874e, #26874e, #26874e);
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#container .box-login {
+    width: 320px;
+    height: 520px;
+    background: #fff;
+    border-top-right-radius: 10px; /* Cantos superiores direitos arredondados */
+    border-bottom-right-radius: 10px; /* Cantos inferiores direitos arredondados */
+    border-top-left-radius: 0; /* Cantos superiores esquerdos retos */
+    border-bottom-left-radius: 0; /* Cantos inferiores esquerdos retos */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-login .box {
+    width: 80%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 15px 15px 0; /* Cantos direitos arredondados */
+}
+
+.box .social {
+    width: 240px;
+    height: 42px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social img {
+    cursor: pointer;
+}
+
+.box-login .box-account {
+    width: 80%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#bubble {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 1px solid #483D8B;
+    background: slateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button {
+    background-color: #26874e; /* Cor personalizada para o botão do modal */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 20px; /* Adiciona algum espaçamento interno */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+.custom-button:hover {
+    background-color: #1f6c3d; /* Cor do botão ao passar o mouse */
+}
+
+.my-popup-class {
+    max-height: 80vh; /* Limita a altura do modal */
+    overflow-y: auto; /* Permite rolagem no modal se o conteúdo for muito grande */
+}
+
+@media (min-width: 1024px) {
+    #container {
+        width: 902px;
+        justify-content: space-between;
+    }
+
+    #container .banner {
+        display: flex;
+    }
+
+    #container .box-login {
+        width: 385px;
+        border-radius: 0px 10px 10px 0px; /* Arredondados apenas à direita */
+    }
+}
+
+.error {
+    background-color: rgba(255, 0, 0, 0.2); /* Fundo opaco vermelho */
+    /* Remover a borda para evitar contornos */
+}
+
+/* Ajustes para o ícone de olho */
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone à direita */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Alinha o ícone à direita */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.toggle-password img {
+    width: 24px;  /* Ajuste do tamanho do ícone */
+    height: 24px; /* Ajuste do tamanho do ícone */
+}
+/* Ajustes para o ícone de olho */
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Alinhamento vertical do input e ícone */
+}
+
+.password-container input {
+    width: 90%;
+    padding-right: 40px; /* Espaço para o ícone à direita */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Alinha o ícone à direita */
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Mantém o ícone centrado verticalmente */
+    top: 50%; /* Move o ícone para o meio verticalmente */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+}
+
+.toggle-password img {
+    width: 24px;  /* Ajuste do tamanho do ícone */
+    height: 24px; /* Ajuste do tamanho do ícone */
+}
+/* Personaliza o botão do SweetAlert2 */
+.swal2-confirm {
+    background-color: #26874e !important; /* Cor do botão de confirmação */
+    color: #fff !important; /* Cor do texto do botão */
+    border: none !important; /* Remove bordas padrão */
+}
+
+.swal2-cancel {
+    background-color: #f27474 !important; /* Cor do botão de cancelamento (opcional) */
+    color: #fff !important; /* Cor do texto do botão */
+    border: none !important; /* Remove bordas padrão */
+}
+
+/* Estilo do botão ao passar o mouse */
+.swal2-confirm:hover {
+    background-color: #1e693a !important; /* Cor ao passar o mouse */
+}

@@ -1,0 +1,10 @@
+:root {
+    --amarelinho: 	#FFFFE0;
+    --verdinho: #4a7c59;
+    --fundo: #e0ebd3;
+    --verde-escuro: #012801;
+ }
+
+ body {
+    font-family: Arial, Helvetica, sans-serif;
+ }

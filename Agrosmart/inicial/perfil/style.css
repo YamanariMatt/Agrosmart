@@ -1,0 +1,115 @@
+body{
+    background-image: url(/Agrosmart/image/FOLHAGEM.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    filter: blur(2px);
+    z-index: -1;
+    backdrop-filter: blur(10px);
+}
+
+main{
+    
+    background-color: var(--fundo);
+    box-shadow: 10px 5px 5px var(--verde-escuro);
+    width:25rem;
+    height: 25rem;
+    margin: auto;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: flex-start;
+    left: 0;
+    margin-right: auto;
+    text-align: justify;
+    padding: 1rem;
+}
+main h2{
+    background-color: var(--fundo);
+    color: var(--verdinho);
+    padding-top: 20px;
+    align-self: center;
+}
+main p{
+    margin: 0;
+    margin-left: 1rem;
+    
+    color: var(--verde-escuro);
+}
+
+main button {
+    background-color: var(--fundo);
+    border: 1px solid var(--verde-escuro);
+    color: var(--verde-escuro);
+    border-radius: 0.5rem;
+    width: 10rem;
+    align-self: center;
+    height: 2rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--verde-escuro);
+    width: 100%;
+}
+
+main a:hover {
+    color: var(--fundo);
+}
+
+main button:hover {
+    background-color: var(--verde-escuro);
+    color: var(--fundo);
+    cursor: pointer;
+}
+
+        /* Modo claro (padrão) */
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+        /* Estilos do modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+        }
+
+        /* Estilos para o botão */
+.dark-mode-toggle {
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+body.dark-mode .dark-mode-toggle {
+    background-color: #fff;
+    color: #000;
+}
+
+

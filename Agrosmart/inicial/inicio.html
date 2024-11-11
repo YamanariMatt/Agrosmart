@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSmart+</title>
+    <link rel="shortcut icon" href="/Agrosmart/image/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Estilo padrão e modo escuro */
+        body.dark-mode {
+            background-color: #515151;
+            color: #ffffff;
+        }
+        header.dark-mode {
+            background-color: #333;
+        }
+        table.dark-mode {
+        background-color: #666666; /* Fundo escuro para a tabela */
+        color: #ffffff; /* Texto claro */
+        border-color: #333; /* Cor da borda */
+        }   
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h2>
+            <span class="azul">Agro</span>
+            <span class="amarelo">Smart</span>
+            <span class="verde">+</span>
+          </h2>
+          
+
+<!-- Ícone de acessibilidade -->
+<div class="icon-container">
+    <label for="toggle-accessibility" class="perfil">
+        <i class="fa-solid fa-universal-access"></i>
+    </label>
+    <input type="checkbox" id="toggle-accessibility" class="toggle-checkbox">
+    <div class="perfil-menu" id="accessibility-menu">
+        <div class="perfil-header">
+            <span>Acessibilidade</span>
+            <label for="toggle-accessibility" class="close-btn">X</label>
+        </div>
+        <div class="perfil-info">
+            <div class="perfil-text">
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()">Ativar Modo Escuro</button>
+                <button onclick="increaseFontSize()">Aumentar Fonte</button>
+                <button onclick="decreaseFontSize()">Diminuir Fonte</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ícone de perfil -->
+    <label for="toggle-profile" class="perfil">
+        <i class="fa-solid fa-user"></i>
+    </label>
+    <input type="checkbox" id="toggle-profile" class="toggle-checkbox">
+    <div class="perfil-menu" id="profile-menu">
+        <div class="perfil-header">
+            <span>Bem Vindo, João</span>
+            <label for="toggle-profile" class="close-btn">X</label>
+        </div>
+        <div class="perfil-info">
+            <div class="perfil-text">
+                <p><b>Nome:</b> João Silva</p>
+                <p><b>Email:</b> joao.silva@email.com</p>
+                <p><b>Último login:</b> 10/09/2024</p>
+
+                <div class="perfil-link">
+                    <a href="/Agrosmart/inicial/perfil/perfil.html" class="link-perfil">Ver perfil completo</a><a href="/Agrosmart/inicial/perfil/perfil.html" class="fa-solid fa-arrow-right"></a>
+                </div>
+
+           
+
+            
+                
+                
+                <script>
+                    // Função para alternar entre modo claro e escuro e salvar no LocalStorage
+                    function toggleDarkMode() {
+                        document.body.classList.toggle('dark-mode');
+                        const button = document.querySelector('.dark-mode-toggle');
+                        const darkModeEnabled = document.body.classList.contains('dark-mode');
+
+                        // Alterna a classe dark-mode para todas as tabelas
+                        const tables = document.querySelectorAll('table');
+                        tables.forEach((table) => {
+                            table.classList.toggle('dark-mode', darkModeEnabled);
+                        });
+
+                        if (darkModeEnabled) {
+                            button.textContent = 'Desativar Modo Escuro';
+                            setDarkModePreference('enabled');
+                        } else {
+                            button.textContent = 'Ativar Modo Escuro';
+                            setDarkModePreference('disabled');
+                        }
+                    }
+
+    // Função para salvar o modo escuro no localStorage
+                    function setDarkModePreference(state) {
+                    localStorage.setItem('darkMode', state);
+                    }
+
+    // Função para carregar o estado do modo escuro do localStorage ao iniciar
+                    function loadDarkModePreference() {
+                    const darkMode = localStorage.getItem('darkMode');
+                    if (darkMode === 'enabled') {
+                    document.body.classList.add('dark-mode');
+                    document.querySelector('.dark-mode-toggle').textContent = 'Desativar Modo Escuro';
+                    } else {
+                    document.body.classList.remove('dark-mode');
+                    document.querySelector('.dark-mode-toggle').textContent = 'Ativar Modo Escuro';
+                    }
+                    }
+
+                    loadDarkModePreference();
+
+                    // Variável para controlar o tamanho inicial da fonte
+                    let fontSize = 16;
+
+                    function setFontSizePreference(size) {
+                    localStorage.setItem('fontSize', size);
+                    }
+
+                    function increaseFontSize() {
+                    fontSize += 1;
+                    document.body.style.fontSize = fontSize + 'px';
+                    setFontSizePreference(fontSize);
+                    }
+
+                    function decreaseFontSize() {
+                    if (fontSize > 1) {
+                    fontSize -= 1;
+                    document.body.style.fontSize = fontSize + 'px';
+                    setFontSizePreference(fontSize);
+                    }
+                    }
+
+                    function loadFontSizePreference() {
+                    const savedFontSize = localStorage.getItem('fontSize');
+                    if (savedFontSize) {
+                    fontSize = parseInt(savedFontSize);
+                    document.body.style.fontSize = fontSize + 'px';
+                    }
+                    }
+
+loadFontSizePreference();
+                </script>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <img src="/Agrosmart/image/coamo.png" alt="logo coamo">
+        <table border="2">
+            <tr>
+                <td>PRODUTOS</td>
+                <td>PREÇOS</td>
+                <td>DATA E HORA</td>
+            </tr>
+            <tr>
+                <td>SOJA</td>
+                <td>R$119,50</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>MILHO</td>
+                <td>R$46,30</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>TRIGO</td>
+                <td>R$70,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>CAFÉ EM COCO</td>
+                <td>R$20,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+        </table>
+    </div>
+
+    <button>
+        <a href="https://api.whatsapp.com/send/?phone=556721088600&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
+    </button>
+
+    <div class="container">
+        <img src="/Agrosmart/image/larm.jpg" alt="logo lar">
+        <table border="2">
+            <tr>
+                <td>PRODUTOS</td>
+                <td>PREÇOS</td>
+                <td>DATA E HORA</td>
+            </tr>
+            <tr>
+                <td>SOJA</td>
+                <td>R$119,50</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>MILHO</td>
+                <td>R$46,30</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>TRIGO</td>
+                <td>R$70,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>CAFÉ EM COCO</td>
+                <td>R$20,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+        </table>
+    </div>
+
+    <button>
+        <a href="https://api.whatsapp.com/send/?phone=556734243449&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
+    </button>
+
+    <div class="container">
+        <img src="/Agrosmart/image/COCAMAR.png" alt="logo cocamar">
+        <table border="2">
+            <tr>
+                <td>PRODUTOS</td>
+                <td>PREÇOS</td>
+                <td>DATA E HORA</td>
+            </tr>
+            <tr>
+                <td>SOJA</td>
+                <td>R$119,50</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>MILHO</td>
+                <td>R$46,30</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>TRIGO</td>
+                <td>R$70,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+            <tr>
+                <td>CAFÉ EM COCO</td>
+                <td>R$20,00</td>
+                <td>26/6/2024 12:45</td>
+            </tr>
+        </table>
+    </div>
+
+    <button>
+        <a href="https://api.whatsapp.com/send/?phone=551194567890&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
+    </button>
+
+    <footer>
+        <p>
+            AGROSMART+ uma inovação para o agronegócio
+        </p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+          var header = document.querySelector('header');
+          if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        };
+    </script>
+</body>
+</html>
