@@ -49,7 +49,7 @@ button {
 body {
     width: 100%;
     height: 100vh;
-    background-image: url("/Agrosmart/image/FOLHAGEM.jpg");
+    background-image: url("../image/FOLHAGEM.jpg");
     background-repeat: no-repeat;
     background-size: cover; /* Mudança para cover para melhor ajuste */
     display: flex;

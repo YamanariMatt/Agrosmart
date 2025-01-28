@@ -19,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url(/Agrosmart/image/FOLHAGEM.jpg); /* Caminho para a imagem de fundo */
+  background-image: url(../image/FOLHAGEM.jpg); /* Caminho para a imagem de fundo */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
