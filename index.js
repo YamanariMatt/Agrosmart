@@ -62,7 +62,7 @@ function login(event) {
             return; // Sai da função se o e-mail for inválido
         } else {
             // Aqui você pode adicionar a lógica de autenticação ou redirecionamento
-            window.location.href = "/Agrosmart/inicial/inicio.html"; // Ajuste o caminho se necessário
+            window.location.href = "../Agrosmart/page/inicio.html"; // Ajuste o caminho se necessário
         }
     }
 }

@@ -116,7 +116,7 @@ function criarConta(event) {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redireciona para a página inicial se confirmado
-                window.location.href = '/inicial/inicio.html';
+                window.location.href = '../Agrosmart/page/inicio.html';
             }
         });
     } else {
