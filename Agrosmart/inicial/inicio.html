@@ -28,11 +28,33 @@
 </head>
 <body>
     <header>
-        <h2>AgroSmart +</h2>
-          
-
-<!-- Ícone de acessibilidade -->
+        <h2>
+            AGROSMART +
+          </h2>
+        
 <div class="icon-container">
+<!-- Ícone de clima -->
+    <label for="toggle-weather" class="weather">
+        <i class="fa-solid fa-cloud-sun"></i>
+    </label>
+    <input type="checkbox" id="toggle-weather" class="toggle-checkbox">
+    <div class="perfil-menu" id="weather-menu">
+        <div class="perfil-header">
+            <span>Clima Atual</span>
+            <label for="toggle-weather" class="close-btn">X</label>
+        </div>
+        <div class="perfil-info">
+            <div class="perfil-text">
+                <p><b>Cidade:</b> <span id="weather-city">Carregando...</span></p>
+                <p><b>Temperatura:</b> <span id="weather-temp">--°C</span></p>
+                <p><b>Condição:</b> <span id="weather-condition">--</span></p>
+                <p><b>Umidade:</b> <span id="weather-humidity">--%</span></p>
+            </div>
+            <button onclick="fetchWeatherData()">Atualizar Clima</button>
+        </div>
+    </div>
+
+    <!-- Ícone de acessibilidade -->
     <label for="toggle-accessibility" class="perfil">
         <i class="fa-solid fa-universal-access"></i>
     </label>
@@ -71,83 +93,6 @@
                     <a href="/Agrosmart/inicial/perfil/perfil.html" class="link-perfil">Ver perfil completo</a><a href="/Agrosmart/inicial/perfil/perfil.html" class="fa-solid fa-arrow-right"></a>
                 </div>
 
-           
-
-            
-                
-                
-                <script>
-                    // Função para alternar entre modo claro e escuro e salvar no LocalStorage
-                    function toggleDarkMode() {
-                        document.body.classList.toggle('dark-mode');
-                        const button = document.querySelector('.dark-mode-toggle');
-                        const darkModeEnabled = document.body.classList.contains('dark-mode');
-
-                        // Alterna a classe dark-mode para todas as tabelas
-                        const tables = document.querySelectorAll('table');
-                        tables.forEach((table) => {
-                            table.classList.toggle('dark-mode', darkModeEnabled);
-                        });
-
-                        if (darkModeEnabled) {
-                            button.textContent = 'Desativar Modo Escuro';
-                            setDarkModePreference('enabled');
-                        } else {
-                            button.textContent = 'Ativar Modo Escuro';
-                            setDarkModePreference('disabled');
-                        }
-                    }
-
-    // Função para salvar o modo escuro no localStorage
-                    function setDarkModePreference(state) {
-                    localStorage.setItem('darkMode', state);
-                    }
-
-    // Função para carregar o estado do modo escuro do localStorage ao iniciar
-                    function loadDarkModePreference() {
-                    const darkMode = localStorage.getItem('darkMode');
-                    if (darkMode === 'enabled') {
-                    document.body.classList.add('dark-mode');
-                    document.querySelector('.dark-mode-toggle').textContent = 'Desativar Modo Escuro';
-                    } else {
-                    document.body.classList.remove('dark-mode');
-                    document.querySelector('.dark-mode-toggle').textContent = 'Ativar Modo Escuro';
-                    }
-                    }
-
-                    loadDarkModePreference();
-
-                    // Variável para controlar o tamanho inicial da fonte
-                    let fontSize = 16;
-
-                    function setFontSizePreference(size) {
-                    localStorage.setItem('fontSize', size);
-                    }
-
-                    function increaseFontSize() {
-                    fontSize += 1;
-                    document.body.style.fontSize = fontSize + 'px';
-                    setFontSizePreference(fontSize);
-                    }
-
-                    function decreaseFontSize() {
-                    if (fontSize > 1) {
-                    fontSize -= 1;
-                    document.body.style.fontSize = fontSize + 'px';
-                    setFontSizePreference(fontSize);
-                    }
-                    }
-
-                    function loadFontSizePreference() {
-                    const savedFontSize = localStorage.getItem('fontSize');
-                    if (savedFontSize) {
-                    fontSize = parseInt(savedFontSize);
-                    document.body.style.fontSize = fontSize + 'px';
-                    }
-                    }
-
-loadFontSizePreference();
-                </script>
             </div>
         </div>
     </header>
@@ -156,34 +101,34 @@ loadFontSizePreference();
         <img src="/Agrosmart/image/coamo.png" alt="logo coamo">
         <table border="2">
             <tr>
-                <td>PRODUTOS</td>
-                <td>PREÇOS</td>
-                <td>DATA E HORA</td>
+                <td class="title">PRODUTOS</td>
+                <td class="title">PREÇOS</td>
+                <td class="title">DATA E HORA</td>
             </tr>
             <tr>
                 <td>SOJA</td>
-                <td>R$119,50</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 128,50</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>MILHO</td>
-                <td>R$46,30</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 56,30</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>TRIGO</td>
-                <td>R$70,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 67,00</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>CAFÉ EM COCO</td>
-                <td>R$20,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 29,24</td>
+                <td>4/12/2024 12:32</td>
             </tr>
         </table>
     </div>
 
-    <button>
+    <button class="whatsapp">
         <a href="https://api.whatsapp.com/send/?phone=556721088600&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
     </button>
 
@@ -191,34 +136,34 @@ loadFontSizePreference();
         <img src="/Agrosmart/image/larm.jpg" alt="logo lar">
         <table border="2">
             <tr>
-                <td>PRODUTOS</td>
-                <td>PREÇOS</td>
-                <td>DATA E HORA</td>
+                <td class="title">PRODUTOS</td>
+                <td class="title">PREÇOS</td>
+                <td class="title">DATA E HORA</td>
             </tr>
             <tr>
                 <td>SOJA</td>
-                <td>R$119,50</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 128,50</td>
+                <td>4/12/2024 12:32 </td>
             </tr>
             <tr>
                 <td>MILHO</td>
-                <td>R$46,30</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 56,30</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>TRIGO</td>
-                <td>R$70,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 67,00</td>
+                <td>4/12/2024 12:32 </td>
             </tr>
             <tr>
                 <td>CAFÉ EM COCO</td>
                 <td>R$20,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>4/12/2024 12:32</td>
             </tr>
         </table>
     </div>
 
-    <button>
+    <button class="whatsapp">
         <a href="https://api.whatsapp.com/send/?phone=556734243449&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
     </button>
 
@@ -226,34 +171,34 @@ loadFontSizePreference();
         <img src="/Agrosmart/image/COCAMAR.png" alt="logo cocamar">
         <table border="2">
             <tr>
-                <td>PRODUTOS</td>
-                <td>PREÇOS</td>
-                <td>DATA E HORA</td>
+                <td class="title">PRODUTOS</td>
+                <td class="title">PREÇOS</td>
+                <td class="title">DATA E HORA</td>
             </tr>
             <tr>
                 <td>SOJA</td>
-                <td>R$119,50</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 132,00</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>MILHO</td>
-                <td>R$46,30</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 60,00</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>TRIGO</td>
-                <td>R$70,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 72,00</td>
+                <td>4/12/2024 12:32</td>
             </tr>
             <tr>
                 <td>CAFÉ EM COCO</td>
-                <td>R$20,00</td>
-                <td>26/6/2024 12:45</td>
+                <td>R$ 29,50</td>
+                <td>4/12/2024 12:32</td>
             </tr>
         </table>
     </div>
 
-    <button>
+    <button class="whatsapp">
         <a href="https://api.whatsapp.com/send/?phone=551194567890&text&type=phone_number&app_absent=0" target="_blank">Fale com um Vendedor</a>
     </button>
 
@@ -263,15 +208,7 @@ loadFontSizePreference();
         </p>
     </footer>
 
-    <script>
-        window.onscroll = function() {
-          var header = document.querySelector('header');
-          if (window.pageYOffset > 50) {
-            header.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-          }
-        };
-    </script>
+   
+    <script src="script.js"></script>
 </body>
 </html>
